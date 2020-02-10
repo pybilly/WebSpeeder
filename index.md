@@ -17,3 +17,4 @@ v1.1
 <a href="webspeeder_v1.1_dev.py">Download WebSpeeder Soure Python Lang</a>
 
 <a href="https://pan.baidu.com/s/1Yo4iiNCtAJCsR0vyZYwj5A">**百度网盘**的v1.1其他版本，提取码：4r7r</a>
+
