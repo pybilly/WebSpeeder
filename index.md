@@ -14,4 +14,4 @@ v1.0
 
 ## 下载链接 Download Link's List
 
-<a href="webspeeder_v1.0_dev.py">Download WebSpeeder Soure</a>
+<a href="webspeeder_v1.0_dev.py">Download WebSpeeder Soure Python Lang</a>
