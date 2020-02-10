@@ -2,7 +2,7 @@
 
 ## 最新版本 The latest version：
 
-v1.0
+v1.1
 
 ## 开发版环境 Development edition environment：
 
@@ -14,4 +14,4 @@ v1.0
 
 ## 下载链接 Download Link's List
 
-<a href="webspeeder_v1.0_dev.py">Download WebSpeeder Soure Python Lang</a>
+<a href="webspeeder_v1.1_dev.py">Download WebSpeeder Soure Python Lang</a>
