@@ -82,10 +82,16 @@ class Ui_MainWindow(object):
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 640, 23))
         self.menubar.setObjectName("menubar")
+        self.menuHelp = QtWidgets.QMenu(self.menubar)
+        self.menuHelp.setObjectName("menuHelp")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        self.action_domain = QtWidgets.QAction(MainWindow)
+        self.action_domain.setObjectName("action_domain")
+        self.menuHelp.addAction(self.action_domain)
+        self.menubar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -98,6 +104,9 @@ class Ui_MainWindow(object):
         self.test1.setText(_translate("MainWindow", "测试所选项"))
         self.label_3.setText(_translate("MainWindow", "国外"))
         self.test2.setText(_translate("MainWindow", "测试所选项"))
+        self.menuHelp.setTitle(_translate("MainWindow", "帮助"))
+        self.action_domain.setText(_translate("MainWindow", "官网主页"))
+
 
 class WebSpeeder(QtWidgets.QMainWindow,Ui_MainWindow):
     def __init__(self):
@@ -187,6 +196,7 @@ class WebSpeeder(QtWidgets.QMainWindow,Ui_MainWindow):
         ])
         self.test1.clicked.connect(self.test1_)
         self.test2.clicked.connect(self.test2_)
+        self.action_domain.triggered.connect(self.openweb)
     def test1_(self):
         option=self.type1.currentText()
         if option != "输入一个网址……":
@@ -225,7 +235,10 @@ class WebSpeeder(QtWidgets.QMainWindow,Ui_MainWindow):
             speed=getSpeed([url],self)
             if speed != -1:
                 QtWidgets.QMessageBox.information(self, "WebSpeeder", "Speed measurement results for this site：%s" % speed[0],)
-
+    def openweb(self):
+        from webbrowser import open_new_tab
+        open_new_tab("https://pybilly.github.io/WebSpeeder/")
+        QtWidgets.QMessageBox.information(self,"WebSpeeder","OK!")
 app=QtWidgets.QApplication(sys.argv)
 frame=WebSpeeder()
 frame.show()
